@@ -1,0 +1,32 @@
+{
+  "name": "my-todo",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyoinYang/practice-githook.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hyoinYang/practice-githook/issues"
+  },
+  "homepage": "https://github.com/hyoinYang/practice-githook#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "eslint": "^9.18.0",
+    "husky": "^9.1.7",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  }
+}

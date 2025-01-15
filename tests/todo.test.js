@@ -27,3 +27,16 @@ describe('TODO가 정상적으로 생성되는지 테스트', () => {
         expect(res.body).toHaveProperty('completed', false);
     });
 });
+
+
+
+describe('TODO가 정상적으로 생성되는지 테스트', () => {
+    it('제목 없는 TODO에 대해서 에러 출력', async () => {
+        const testTitle = '';
+        const res = await request(app)
+            .post('/todos')
+            .send({})
+            .expect('Content-Type', /json/)
+            .expect(400); // 400 error
+    });
+});

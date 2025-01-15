@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const ErrorMessages = require('../constants/errorMessages');
 
 // 간단한 인메모리 TODO 목록
 let todos = [
@@ -16,8 +17,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     const { title } = req.body;
     if (!title) {
-        // 아직 오류 메시지가 정해지지 않아서 주석 처리해두었습니다. -폐급 개발자
-        // return res.status(400).json({ error: '임시 오류 메시지.' });
+        return res.status(400).json({ 'error': ErrorMessages.MISSING_TITLE });
     }
 
     const newTodo = {
@@ -25,6 +25,7 @@ router.post('/', (req, res) => {
         title,
         completed: true
     };
+
     todos.push(newTodo);
 
     res.status(201).json(newTodo);
